@@ -17,9 +17,13 @@ Usage
     `./container <new_hostname> <new_filesystem_directory> <num_processes> <path_to_program_to_run_within_container> <args_for_arguments>`
     
 new_hostname - any given name.
+
 new_filesystem_directory is an image of a linux file system, an example of one can be found under "fs".
+
 num_rocesses is the maximum mumber of processes to run in the container.
+
 path_to_program_to_run_within_container is an executable file to run inside the container
+
 args_for_arguments - zero or morre arguments to send run with the executable file.
 
 Credits
