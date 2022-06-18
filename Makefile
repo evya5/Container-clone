@@ -1,0 +1,24 @@
+CXX=g++
+INCS=-I.
+CXXFLAGS = -Wall -std=c++11 -g $(INCS)
+
+CONTAINER_LIBSRC = MyContainer.cpp MyContainer.h
+UTILS_LIBSRC = ErrHandler.h
+
+TAR=tar
+TARFLAGS=-cvf
+TARNAME=ex5.tar
+TARSRCS=$(CONTAINER_LIBSRC) $(UTILS_LIBSRC) Makefile README
+
+OUTPUTFLAG = -o
+SOCKET_OUTPUT_NAME = socket
+CONTAINER_OUTPUT_NAME = container
+
+make:
+	$(CXX) $(CXXFLAGS) $(CONTAINER_LIBSRC) $(OUTPUTFLAG) $(CONTAINER_OUTPUT_NAME)
+	
+clean:
+	$(RM) $(CONTAINER_OUTPUT_NAME) *~ *core
+
+tar:
+	$(TAR) $(TARFLAGS) $(TARNAME) $(TARSRCS)
